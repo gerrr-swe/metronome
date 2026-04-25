@@ -1,0 +1,9 @@
+:root {
+  --primary-strong-red: red;
+  --primary-red: #F03861;
+  --primary-white: #FEF2F2;
+  --primary-yellow: #F5D97E;
+  --roundness: 10px;
+  --padding: 10px;
+  --margin: 10px;
+}
