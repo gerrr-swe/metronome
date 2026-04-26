@@ -2,14 +2,15 @@
 	import type { Snippet } from "svelte";
 
   type Props = {
+    class?: string;
     onclick?: () => void;
     children: Snippet;
   }
 
-  let { onclick, children } : Props = $props();
+  let { onclick, children, class: className } : Props = $props();
 </script>
 
-<button {onclick}>
+<button {onclick} class={className} >
   {@render children()}
 </button>
 
