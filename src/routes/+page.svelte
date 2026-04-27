@@ -1,6 +1,5 @@
 <script>
-	import { Button } from "$lib";
-	import Slider from "$lib/components/Slider.svelte";
+	import { Button, Slider } from "$lib";
 
   const minBpm = 20;
   const maxBpm = 218;
@@ -27,7 +26,7 @@
     </Button>
     
     <div class="slider-container">
-      <Slider bind:value={bpm} ></Slider>
+      <Slider bind:value={bpm} minVal={minBpm} maxVal={maxBpm} ></Slider>
     </div>
 
     <Button class="button-controller" onclick={handleIncrement} >
