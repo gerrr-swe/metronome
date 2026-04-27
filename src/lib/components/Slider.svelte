@@ -1,12 +1,14 @@
 <script lang="ts">
   type Props = {
     value: number;
+    minVal: number;
+    maxVal: number;
   }
 
-  let  { value = $bindable() } : Props = $props();
+  let  { value = $bindable(), minVal, maxVal } : Props = $props();
 </script>
 
-<input type="range" class="generator-input" min="20" max="218" bind:value />
+<input type="range" class="generator-input" min={minVal} max={maxVal} bind:value />
 
 <style>
 	/* Target Input */
