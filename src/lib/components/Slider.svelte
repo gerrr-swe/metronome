@@ -3,12 +3,13 @@
     value: number;
     minVal: number;
     maxVal: number;
+    onchange: () => void;
   }
 
-  let  { value = $bindable(), minVal, maxVal } : Props = $props();
+  let  { value = $bindable(), minVal, maxVal, onchange } : Props = $props();
 </script>
 
-<input type="range" class="generator-input" min={minVal} max={maxVal} bind:value />
+<input {onchange} type="range" class="generator-input" min={minVal} max={maxVal} bind:value />
 
 <style>
 	/* Target Input */
