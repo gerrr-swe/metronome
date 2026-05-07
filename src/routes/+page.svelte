@@ -20,6 +20,7 @@
 		const osc = context.createOscillator();
 		const gain = context.createGain();
 
+		osc.type = "square"
 		osc.connect(gain);
 		gain.connect(context.destination);
 
@@ -62,10 +63,6 @@
 		clearInterval(interval);
 		playing = false;
 	}
-
-	$effect(()=>{
-
-	})
 
 	onMount(() => {
 		context = new window.AudioContext();
@@ -128,6 +125,7 @@
 	.main {
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		gap: 1rem;
 	}
 </style>

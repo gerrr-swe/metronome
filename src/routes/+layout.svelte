@@ -6,9 +6,22 @@
 	let { children } = $props();
 </script>
 
-<svelte:head>
-	<link rel="icon" href={favicon} />
-</svelte:head>
+<div class="main">
+	<Header />
+	<div class="metronome-container">{@render children()}</div>
+</div>
 
-<Header />
-{@render children()}
+<style>
+	.main {
+		height: 100svh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.metronome-container {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+</style>
