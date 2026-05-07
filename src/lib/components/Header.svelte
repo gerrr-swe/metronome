@@ -1,18 +1,18 @@
 <script lang="ts">
 	import IconButton from './IconButton.svelte';
 
-	const ICONS: Record<string, { href: string; icon: string; alt: string }> = {
-		github: {
+	const ICONS: { href: string; icon: string; alt: string }[] = [
+		{
 			href: 'https://github.com/gerrr-swe',
 			icon: 'https://s.magecdn.com/social/mb-github.svg',
 			alt: 'github'
 		},
-		linkedin: {
+		{
 			href: 'https://www.linkedin.com/in/gerardo-ramirez-swe',
 			icon: 'https://s.magecdn.com/social/mb-linkedin.svg',
 			alt: 'linkedin'
 		}
-	};
+  ];
 </script>
 
 <header>
@@ -21,16 +21,13 @@
 			<li><a href="https://rrg44.github.io/portafolio-personal/">Other cool things</a></li>
 		</span>
 		<span class="right side">
-			<IconButton
-				href={ICONS['linkedin'].href}
-				iconSrc={ICONS['linkedin'].icon}
-				alt={ICONS['linkedin'].alt}
-			/>
-			<IconButton
-				href={ICONS['github'].href}
-				iconSrc={ICONS['github'].icon}
-				alt={ICONS['github'].alt}
-			/>
+      {#each ICONS as icon (icon)}
+        <IconButton
+          href={icon.href}
+          iconSrc={icon.icon}
+          alt={icon.alt}
+        />
+      {/each}
 		</span>
 	</ul>
 </header>
